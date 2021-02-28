@@ -118,8 +118,8 @@ public class ConsultationController {
         // For reference check the method updateLabTest() method from LabRequestController class
 
         try {
-            // replace this line of code with your implementation
-            throw new ResponseStatusException(HttpStatus.NOT_IMPLEMENTED,"Not implemented");
+            User loggedInUser = userLoggedInService.getLoggedInUser();
+            return testRequestUpdateService.updateConsultation(id, testResult, loggedInUser);
 
 
         } catch (ConstraintViolationException e) {
